@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  start_date: 2019-01-07
+  end_date: 2019-01-07
+  instructor: one
+  student: one
+
+two:
+  name: MyString
+  start_date: 2019-01-07
+  end_date: 2019-01-07
+  instructor: two
+  student: two
