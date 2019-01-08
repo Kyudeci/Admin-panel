@@ -35,6 +35,7 @@
       </div>
       <div class="modal-body">
         <form role="form" class="form-horizontal" action="/pages/home" method="POST">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
             <div class="form-group">
                 <label for="first_name" class="col-sm-3 control-label">First Name</label>
                 <div class="col-sm-6">
@@ -125,3 +126,14 @@
           </div>
         </div>
       </div>
+
+
+<!--bootgem form  -->
+<%= form_tag("/pages/home", method: "post") do %>
+<div class="form-group">
+  <%= label_tag(:q, "Username:", :class =>"col-sm-3 control-label") %>
+  <div class="col-sm-6">
+  <%= text_field_tag(:q) %>
+  </div>
+  <%= submit_tag("Search") %>
+<% end %>
