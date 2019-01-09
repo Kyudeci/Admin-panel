@@ -7,12 +7,13 @@ class PagesController < ApplicationController
     end
   end
 
-
-
-  def about
+  def main
   end
 
-  def contact
+  def courses
+  end
+  
+  def database
   end
 end
 # if (Date.valid_date?(params[:start_date]) &&  )
