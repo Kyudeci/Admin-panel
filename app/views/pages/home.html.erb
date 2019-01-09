@@ -85,7 +85,6 @@
   </div>
 </div>
 
-<!--Login  -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -97,10 +96,10 @@
             </div>
             <div class="modal-body">
               <%= form_tag("/pages/home", method: "post", :class => "form-horizontal") do %>
-                <div class="form-group">
-                    <%= label_tag(:username, "Username:", :class =>"col-sm-3 control-label") %>
+              <div class="form-group">
+                <%= label_tag(:username, "Username:", :class =>"col-sm-3 control-label") %>
                 <div class="col-sm-6">
-                    <%= text_field_tag(:username ) %>
+                  <%= text_field_tag(:username ) %>
                 </div>
                 <div class="col-sm-3"></div>
                 </div>
