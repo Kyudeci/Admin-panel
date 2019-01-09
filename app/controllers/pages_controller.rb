@@ -5,7 +5,7 @@ class PagesController < ApplicationController
       User.create(first_name: params[:first_name],last_name: params[:last_name],date_of_birth: params[:date_of_birth],email: params[:email],username: params[:username],password: params[:password])
       redirect_to '/'
     end
-    
+
   end
 
   def main
