@@ -34,61 +34,59 @@
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" class="form-horizontal" action="/pages/home" method="POST">
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= form_tag("/pages/home", method: "post", :class => "form-horizontal") do %>
             <div class="form-group">
-                <label for="first_name" class="col-sm-3 control-label">First Name</label>
-                <div class="col-sm-6">
-                    <input type="text" id="first_name" name="first_name" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:first_name, "First Name:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= text_field_tag(:first_name ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <label for="last_name" class="col-sm-3 control-label">Last Name</label>
-                <div class="col-sm-6">
-                    <input type="text" id="last_name" name="last_name" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:last_name, "Last Name:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= text_field_tag(:last_name ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <label for="date_of_birth" class="col-sm-3 control-label">D.O.B</label>
-                <div class="col-sm-6">
-                    <input type="date" id="date_of_birth" name="date_of_birth" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:date_of_birth, "D.O.B:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= date_field(:user, :date_of_birth ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">Email</label>
-                <div class="col-sm-6">
-                    <input type="email" id="email" name="email" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:email, "Email:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= text_field_tag(:email ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <label for="username" class="col-sm-3 control-label">Username</label>
-                <div class="col-sm-6">
-                    <input type="text" id="username" name="username" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:username, "Username:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= text_field_tag(:username ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-sm-3 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="password" id="password" name="password" class="form-control" />
-                </div>
-                <div class="col-sm-3"></div>
+                <%= label_tag(:password, "Password:", :class =>"col-sm-3 control-label") %>
+            <div class="col-sm-6">
+                <%= password_field_tag(:password ) %>
+            </div>
+            <div class="col-sm-3"></div>
             </div>
             <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" name="button">Submit</button>
-                </div>
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= submit_tag("Submit") %>
             </div>
-        </form>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-<!--End -->
 
 <!--Login  -->
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -101,39 +99,28 @@
               </button>
             </div>
             <div class="modal-body">
-              <form role="form" class="form-horizontal" action="/" method="POST">
+              <%= form_tag("/pages/home", method: "post", :class => "form-horizontal") do %>
                 <div class="form-group">
-                  <label for="username" class="col-sm-2 control-label">Username</label>
-                  <div class="col-sm-5">
-                    <input type="text" id="username" name="username" class="form-control" />
-                  </div>
-                  <div class="col-sm-5"></div>
+                    <%= label_tag(:username, "Username:", :class =>"col-sm-3 control-label") %>
+                <div class="col-sm-6">
+                    <%= text_field_tag(:username ) %>
+                </div>
+                <div class="col-sm-3"></div>
                 </div>
                 <div class="form-group">
-                  <label for="password" class="col-sm-2 control-label">Password</label>
-                  <div class="col-sm-5">
-                    <input type="password" id="password" name="password" class="form-control" />
-                  </div>
-                  <div class="col-sm-5"></div>
+                    <%= label_tag(:password, "Password:", :class =>"col-sm-3 control-label") %>
+                <div class="col-sm-6">
+                    <%= password_field_tag(:password ) %>
+                </div>
+                <div class="col-sm-3"></div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" name="button">Submit</button>
-                  </div>
+                <div class="col-sm-offset-2 col-sm-10">
+                    <%= submit_tag("Submit") %>
                 </div>
-              </form>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
       </div>
-
-
-<!--bootgem form  -->
-<%= form_tag("/pages/home", method: "post") do %>
-<div class="form-group">
-  <%= label_tag(:q, "Username:", :class =>"col-sm-3 control-label") %>
-  <div class="col-sm-6">
-  <%= text_field_tag(:q) %>
-  </div>
-  <%= submit_tag("Search") %>
-<% end %>

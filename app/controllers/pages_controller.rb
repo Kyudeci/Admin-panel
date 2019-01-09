@@ -15,5 +15,5 @@ class PagesController < ApplicationController
   def contact
   end
 end
-if (Date.valid_date?(params[:start_date]) &&  )
+# if (Date.valid_date?(params[:start_date]) &&  )
 # Course.create(start_date: Date.strptime(params[:start_date], '%m/%d/%Y'), end)
