@@ -12,6 +12,11 @@ class PagesController < ApplicationController
   end
 
   def courses
+    @courses = Course.all
+    def create
+      Course.create(name: params[:name],hours: params[:hours])
+      redirect_to '/courses'
+    end
   end
 
   def database

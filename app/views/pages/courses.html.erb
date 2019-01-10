@@ -13,5 +13,26 @@
 </nav>
 <h2>Add A Course:</h2>
 
-
+<%= bootstrap_form_tag url: '/courses', layout: :inline, label_col: "col-sm-2" do |f| %>
+  <%= f.text_field :name, label: "Course Name:", required: true, control_col: "col-sm-5" %>
+  <%= f.number_field :hours, label: "Course Hours:", required: true, control_col: "col-sm-5" %>
+  <%= f.submit %>
+<% end %>
 <h2>Course List:</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Hours</th>
+  </thead>
+  <tbody>
+      <% @courses.each do |courses| %>
+      <tr>
+        <th scope="row"><%= courses.id %></th>
+        <td><%= courses.name %></td>
+        <td><%= courses.hours %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

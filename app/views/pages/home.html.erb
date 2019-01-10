@@ -1,14 +1,13 @@
 
 <ul>
-  <li>Site Name: Kanto</li>
+  <li>Site Name: Sinnoh Institute</li>
   <li>Use modal from rumblr project </li>
   <li>We using gem datagrid boyz</li>
 </ul>
-<a style="color:purple"href="/pages/about">
-  <div class="circle">
-    <p class="button_text">Why?</p>
-  </div>
-</a>
+<a class="nav-item nav-link" href="/main">Main Page <span class="sr-only">(current)</span></a>
+<a class="nav-item nav-link"  href="/courses">Courses</a>
+<a class="nav-item nav-link"  href="/database">Database</a>
+
 
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -20,13 +19,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= bootstrap_form_tag url: "/sign_up", method: "post", :class => "form-horizontal" do |f| %>
-          <%= f.text_field(:first_name ) %>
-          <%= f.text_field(:last_name ) %>
-          <%= f.date_field :date_of_birth %>
-          <%= f.email_field(:email ) %>
-          <%= f.text_field(:username ) %>
-          <%= f.password_field(:password, label: "Password:") %>
+        <%= bootstrap_form_tag url: "/users", method: "post", :class => "form-horizontal" do |f| %>
+          <%= f.email_field("user[email]" ) %>
+          <%= f.text_field("user[username]" ) %>
+          <%= f.password_field("user[password]", label: "Password:") %>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -48,9 +44,9 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= bootstrap_form_tag url: "/sign_in", method: "post", :class => "form-horizontal" do |f| %>
-          <%= f.text_field(:username ) %>
-          <%= f.password_field(:password, label: "Password:") %>
+        <%= bootstrap_form_tag url: "/session", method: "post", :class => "form-horizontal" do |f| %>
+          <%= f.text_field("session[username]", label: "Email:", required: true) %>
+          <%= f.password_field("session[password]", label: "Password:", required: true) %>
             <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
               <button type="submit" class="btn btn-primary">Submit</button>

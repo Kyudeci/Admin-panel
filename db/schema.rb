@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_135953) do
+ActiveRecord::Schema.define(version: 2019_01_10_205548) do
 
   create_table "cohorts", force: :cascade do |t|
     t.string "name"
@@ -22,11 +22,11 @@ ActiveRecord::Schema.define(version: 2019_01_09_135953) do
     t.index ["course_id"], name: "index_cohorts_on_course_id"
   end
 
-  create_table "cohorts_and_students", id: false, force: :cascade do |t|
+  create_table "cohorts_students", id: false, force: :cascade do |t|
     t.integer "cohort_id"
     t.integer "student_id"
-    t.index ["cohort_id"], name: "index_cohorts_and_students_on_cohort_id"
-    t.index ["student_id"], name: "index_cohorts_and_students_on_student_id"
+    t.index ["cohort_id"], name: "index_cohorts_students_on_cohort_id"
+    t.index ["student_id"], name: "index_cohorts_students_on_student_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -42,8 +42,10 @@ ActiveRecord::Schema.define(version: 2019_01_09_135953) do
     t.integer "age"
     t.integer "salary"
     t.string "education"
+    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -58,9 +60,6 @@ ActiveRecord::Schema.define(version: 2019_01_09_135953) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.date "date_of_birth"
     t.string "email"
     t.string "username"
     t.string "password"
