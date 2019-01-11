@@ -1,16 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand"  href="#"><img src="/favicon-96x96.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="main">Main Page</a>
-      <a class="nav-item nav-link active"  href="courses">Courses <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link"  href="database">Database</a>
-    </div>
-  </div>
-</nav>
 <h2>Add A Course:</h2>
 
 <%= bootstrap_form_tag url: '/courses', layout: :inline, label_col: "col-sm-2" do |f| %>
@@ -19,19 +6,21 @@
   <%= f.submit %>
 <% end %>
 <h2>Course List:</h2>
-<table class="table">
+<table class="table table-bordered table-hover">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Course Name</th>
       <th scope="col">Course Hours</th>
+      <th scope="col">Add Cohort</th>
   </thead>
   <tbody>
       <% @courses.each do |courses| %>
       <tr>
         <th scope="row"><%= courses.id %></th>
-        <td><%= courses.name %></td>
+        <td><a href="/cohorts/<%= courses.id %>"><%= courses.name %></a></td>
         <td><%= courses.hours %></td>
+        <td><a class="btn btn-success" href="#">Add Cohort</a></td>
       </tr>
       <% end %>
   </tbody>

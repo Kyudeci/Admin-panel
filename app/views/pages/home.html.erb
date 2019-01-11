@@ -2,12 +2,7 @@
 <ul>
   <li>Site Name: Sinnoh Institute</li>
   <li>Use modal from rumblr project </li>
-  <li>We using gem datagrid boyz</li>
 </ul>
-<a class="nav-item nav-link" href="/main">Main Page <span class="sr-only">(current)</span></a>
-<a class="nav-item nav-link"  href="/courses">Courses</a>
-<a class="nav-item nav-link"  href="/database">Database</a>
-
 
 <div class="modal fade" id="signup" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -45,7 +40,7 @@
       </div>
       <div class="modal-body">
         <%= bootstrap_form_tag url: "/session", method: "post", :class => "form-horizontal" do |f| %>
-          <%= f.text_field("session[username]", label: "Email:", required: true) %>
+          <%= f.text_field("session[email]", label: "Email:", required: true) %>
           <%= f.password_field("session[password]", label: "Password:", required: true) %>
             <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

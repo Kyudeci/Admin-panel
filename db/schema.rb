@@ -42,10 +42,8 @@ ActiveRecord::Schema.define(version: 2019_01_10_205548) do
     t.integer "age"
     t.integer "salary"
     t.string "education"
-    t.integer "cohort_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cohort_id"], name: "index_instructors_on_cohort_id"
   end
 
   create_table "students", force: :cascade do |t|

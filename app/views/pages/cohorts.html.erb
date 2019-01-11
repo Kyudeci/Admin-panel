@@ -1,0 +1,28 @@
+<%= bootstrap_form_tag url: '/cohorts', layout: :inline, label_col: "col-sm-2" do |f| %>
+  <%= f.text_field :name, label: "Name:", required: true, control_col: "col-sm-5" %>
+  <%= f.date_field :start_date, label: "Start Date:", required: true, control_col: "col-sm-5" %>
+  <%= f.date_field :end_date, label: "End Date:", required: true, control_col: "col-sm-5" %>
+
+  <%= f.submit %>
+<% end %>
+
+<table class="table">
+<caption>List of Cohorts</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+  </thead>
+  <tbody>
+      <% @course.first.cohort.each do |cohorts| %>
+      <tr>
+        <th scope="row"><%= cohorts.id %></th>
+        <td><%= cohorts.name %></td>
+        <td><%= cohorts.start_date %></td>
+        <td><%= cohorts.end_date %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
